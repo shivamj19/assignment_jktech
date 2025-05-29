@@ -1,336 +1,674 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<style>
-  :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
-
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --pill-accent: var(--bright-blue);
-
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-  }
-
-  p {
-    margin: 0;
-    color: var(--gray-700);
-  }
-
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
-  }
-
-  .angular-logo {
-    max-width: 9.2rem;
-  }
-
-  .content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 3rem;
-  }
-
-  .content h1 {
-    margin-top: 1.75rem;
-  }
-
-  .content p {
-    margin-top: 1.5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
-  .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-
-  .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-family: var(--inter-font);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
-    text-decoration: none;
-  }
-
-  .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
-  }
-
-  .pill-group .pill:nth-child(6n + 1) {
-    --pill-accent: var(--bright-blue);
-  }
-  .pill-group .pill:nth-child(6n + 2) {
-    --pill-accent: var(--french-violet);
-  }
-  .pill-group .pill:nth-child(6n + 3),
-  .pill-group .pill:nth-child(6n + 4),
-  .pill-group .pill:nth-child(6n + 5) {
-    --pill-accent: var(--hot-red);
-  }
-
-  .pill-group svg {
-    margin-inline-start: 0.25rem;
-  }
-
-  .social-links {
-    display: flex;
-    align-items: center;
-    gap: 0.73rem;
-    margin-top: 1.5rem;
-  }
-
-  .social-links path {
-    transition: fill 0.3s ease;
-    fill: var(--gray-400);
-  }
-
-  .social-links a:hover svg path {
-    fill: var(--gray-900);
-  }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
-</style>
-
-<main class="main">
-  <div class="content">
-    <div class="left-side">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 982 239"
-        fill="none"
-        class="angular-logo"
-      >
-        <g clip-path="url(#a)">
-          <path
-            fill="url(#b)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-          <path
-            fill="url(#c)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-        </g>
-        <defs>
-          <radialGradient
-            id="c"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#FF41F8" />
-            <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5" />
-            <stop offset="1" stop-color="#FF41F8" stop-opacity="0" />
-          </radialGradient>
-          <linearGradient
-            id="b"
-            x1="0"
-            x2="982"
-            y1="192"
-            y2="192"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#F0060B" />
-            <stop offset="0" stop-color="#F0070C" />
-            <stop offset=".526" stop-color="#CC26D5" />
-            <stop offset="1" stop-color="#7702FF" />
-          </linearGradient>
-          <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
-        </defs>
-      </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+    <!-- Floating Background Elements -->
+    <div class="floating-icons">
+        <!-- Icons will be generated by JavaScript -->
     </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      <div class="pill-group">
-        @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
-        ]; track item.title) {
-          <a
-            class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>{{ item.title }}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="14"
-              viewBox="0 -960 960 960"
-              width="14"
-              fill="currentColor"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
-              />
-            </svg>
-          </a>
+    
+    <div class="particles">
+        <!-- Particles will be generated by JavaScript -->
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">🎬 MovieMood</div>
+                <div class="nav-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search movies or actors..." id="navSearch">
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Find the Perfect Movie for Your Mood</h1>
+            <p>Whether you want to smile, thrill, or think deeply — we've got movies that match your vibe.</p>
+            
+            <!-- Mood Buttons -->
+            <div class="mood-buttons">
+                <button class="mood-btn feel-good" data-mood="feel-good">
+                    <i class="fas fa-smile-beam"></i>
+                    Feel Good
+                </button>
+                <button class="mood-btn action-fix" data-mood="action">
+                    <i class="fas fa-bolt"></i>
+                    Action Fix
+                </button>
+                <button class="mood-btn mind-benders" data-mood="thriller">
+                    <i class="fas fa-brain"></i>
+                    Mind Benders
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="main-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search by movie title or actor..." id="mainSearch">
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <h2 class="section-title" id="sectionTitle">Popular Movies</h2>
+            <div class="movie-grid" id="movieGrid">
+                <!-- Movies will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie Detail Modal -->
+    <div class="modal" id="movieModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header">
+                <div class="modal-poster">
+                    <i class="fas fa-film"></i>
+                </div>
+                <div class="modal-info">
+                    <h2 class="modal-title" id="modalTitle">Movie Title</h2>
+                    <div class="modal-meta">
+                        <span id="modalYear">2023</span>
+                        <span id="modalRuntime">120 min</span>
+                        <span id="modalGenre">Action</span>
+                        <span id="modalRating">⭐ 8.5</span>
+                    </div>
+                    <p class="modal-synopsis" id="modalSynopsis">
+                        An epic adventure that takes you on a journey through time and space...
+                    </p>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="trailer-section">
+                    <h3><i class="fas fa-play-circle" style="margin-right: 0.5rem; color: #4ecdc4;"></i>Trailer</h3>
+                    <div class="trailer-placeholder">
+                        <div>
+                            <i class="fas fa-play" style="font-size: 3rem; margin-bottom: 1rem; animation: pulse 2s infinite;"></i>
+                            <br>
+                            Trailer Preview
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cast-section">
+                    <h3><i class="fas fa-users" style="margin-right: 0.5rem; color: #4ecdc4;"></i>Cast</h3>
+                    <div class="cast-grid" id="castGrid">
+                        <!-- Cast members will be loaded here -->
+                    </div>
+                </div>
+                
+                <div class="similar-movies">
+                    <h3><i class="fas fa-thumbs-up" style="margin-right: 0.5rem; color: #4ecdc4;"></i>You Might Also Like</h3>
+                    <div class="similar-grid" id="similarGrid">
+                        <!-- Similar movies will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <div class="bottom-nav">
+        <div class="bottom-nav-content">
+            <a href="#" class="bottom-nav-item">
+                <i class="fas fa-home"></i>
+                Home
+            </a>
+            <a href="#" class="bottom-nav-item">
+                <i class="fas fa-search"></i>
+                Search
+            </a>
+            <a href="#" class="bottom-nav-item">
+                <i class="fas fa-heart"></i>
+                Favorites
+            </a>
+            <a href="#" class="bottom-nav-item">
+                <i class="fas fa-user"></i>
+                Profile
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Sample movie data
+        const movieDatabase = {
+            'feel-good': [
+                {
+                    id: 1,
+                    title: "The Grand Budapest Hotel",
+                    year: 2014,
+                    rating: 8.1,
+                    genre: "Comedy",
+                    runtime: "99 min",
+                    synopsis: "A legendary concierge at a famous European hotel between the wars and his protégé become involved in a story involving the theft of a priceless painting.",
+                    cast: ["Ralph Fiennes", "F. Murray Abraham", "Mathieu Amalric", "Adrien Brody"]
+                },
+                {
+                    id: 2,
+                    title: "Paddington 2",
+                    year: 2017,
+                    rating: 8.2,
+                    genre: "Family",
+                    runtime: "103 min",
+                    synopsis: "Paddington, now happily settled with the Brown family, picks up a series of odd jobs to buy the perfect present for his Aunt Lucy's 100th birthday.",
+                    cast: ["Hugh Bonneville", "Sally Hawkins", "Brendan Gleeson", "Julie Walters"]
+                },
+                {
+                    id: 3,
+                    title: "La La Land",
+                    year: 2016,
+                    rating: 8.0,
+                    genre: "Musical",
+                    runtime: "128 min",
+                    synopsis: "A jazz musician and an aspiring actress meet and fall in love in Los Angeles while pursuing their dreams.",
+                    cast: ["Ryan Gosling", "Emma Stone", "John Legend", "Rosemarie DeWitt"]
+                },
+                {
+                    id: 4,
+                    title: "The Princess Bride",
+                    year: 1987,
+                    rating: 8.1,
+                    genre: "Adventure",
+                    runtime: "98 min",
+                    synopsis: "A bedridden boy's grandfather reads him the story of a farmboy-turned-pirate who encounters numerous obstacles, enemies and allies in his quest to be reunited with his true love.",
+                    cast: ["Cary Elwes", "Robin Wright", "Mandy Patinkin", "Chris Sarandon"]
+                }
+            ],
+            'action': [
+                {
+                    id: 5,
+                    title: "Mad Max: Fury Road",
+                    year: 2015,
+                    rating: 8.1,
+                    genre: "Action",
+                    runtime: "120 min",
+                    synopsis: "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+                    cast: ["Tom Hardy", "Charlize Theron", "Nicholas Hoult", "Hugh Keays-Byrne"]
+                },
+                {
+                    id: 6,
+                    title: "John Wick",
+                    year: 2014,
+                    rating: 7.4,
+                    genre: "Action",
+                    runtime: "101 min",
+                    synopsis: "An ex-hit-man comes out of retirement to track down the gangsters that took everything from him.",
+                    cast: ["Keanu Reeves", "Michael Nyqvist", "Alfie Allen", "Willem Dafoe"]
+                },
+                {
+                    id: 7,
+                    title: "Mission: Impossible - Fallout",
+                    year: 2018,
+                    rating: 7.7,
+                    genre: "Action",
+                    runtime: "147 min",
+                    synopsis: "Ethan Hunt and his IMF team, along with some familiar allies, race against time after a mission gone wrong.",
+                    cast: ["Tom Cruise", "Henry Cavill", "Ving Rhames", "Simon Pegg"]
+                },
+                {
+                    id: 8,
+                    title: "The Dark Knight",
+                    year: 2008,
+                    rating: 9.0,
+                    genre: "Action",
+                    runtime: "152 min",
+                    synopsis: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+                    cast: ["Christian Bale", "Heath Ledger", "Aaron Eckhart", "Michael Caine"]
+                }
+            ],
+            'thriller': [
+                {
+                    id: 9,
+                    title: "Inception",
+                    year: 2010,
+                    rating: 8.8,
+                    genre: "Sci-Fi",
+                    runtime: "148 min",
+                    synopsis: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+                    cast: ["Leonardo DiCaprio", "Marion Cotillard", "Tom Hardy", "Ellen Page"]
+                },
+                {
+                    id: 10,
+                    title: "Shutter Island",
+                    year: 2010,
+                    rating: 8.2,
+                    genre: "Thriller",
+                    runtime: "138 min",
+                    synopsis: "In 1954, a U.S. Marshal investigates the disappearance of a murderer who escaped from a hospital for the criminally insane.",
+                    cast: ["Leonardo DiCaprio", "Mark Ruffalo", "Ben Kingsley", "Max von Sydow"]
+                },
+                {
+                    id: 11,
+                    title: "Memento",
+                    year: 2000,
+                    rating: 8.4,
+                    genre: "Mystery",
+                    runtime: "113 min",
+                    synopsis: "A man with short-term memory loss attempts to track down his wife's murderer.",
+                    cast: ["Guy Pearce", "Carrie-Anne Moss", "Joe Pantoliano", "Mark Boone"]
+                },
+                {
+                    id: 12,
+                    title: "Black Swan",
+                    year: 2010,
+                    rating: 8.0,
+                    genre: "Thriller",
+                    runtime: "108 min",
+                    synopsis: "A committed dancer struggles to maintain her sanity after winning the lead role in a production of Tchaikovsky's Swan Lake.",
+                    cast: ["Natalie Portman", "Mila Kunis", "Vincent Cassel", "Winona Ryder"]
+                }
+            ]
+        };
+
+        // Current state
+        let currentMovies = [];
+        let currentMood = 'popular';
+
+        // DOM elements
+        const movieGrid = document.getElementById('movieGrid');
+        const sectionTitle = document.getElementById('sectionTitle');
+        const mainSearch = document.getElementById('mainSearch');
+        const navSearch = document.getElementById('navSearch');
+        const moodButtons = document.querySelectorAll('.mood-btn');
+        const themeToggle = document.getElementById('themeToggle');
+        const modal = document.getElementById('movieModal');
+        const modalClose = document.getElementById('modalClose');
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPopularMovies();
+            setupEventListeners();
+            createFloatingIcons();
+            createParticles();
+        });
+
+        // Create floating background icons
+        function createFloatingIcons() {
+            const floatingContainer = document.querySelector('.floating-icons');
+            const icons = ['🎬', '🎭', '🎪', '🎨', '🎵', '🎯', '⭐', '🎊', '🎉', '✨'];
+            
+            function addIcon() {
+                const icon = document.createElement('div');
+                icon.className = 'floating-icon';
+                icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+                icon.style.left = Math.random() * 100 + '%';
+                icon.style.animationDelay = Math.random() * 20 + 's';
+                icon.style.animationDuration = (15 + Math.random() * 10) + 's';
+                
+                floatingContainer.appendChild(icon);
+                
+                setTimeout(() => {
+                    icon.remove();
+                }, 25000);
+            }
+            
+            // Add initial icons
+            for (let i = 0; i < 5; i++) {
+                setTimeout(addIcon, i * 2000);
+            }
+            
+            // Add new icons periodically
+            setInterval(addIcon, 4000);
         }
-      </div>
-      <div class="social-links">
-        <a
-          href="https://github.com/angular/angular"
-          aria-label="Github"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Github"
-          >
-            <path
-              d="M12.3047 0C5.50634 0 0 5.50942 0 12.3047C0 17.7423 3.52529 22.3535 8.41332 23.9787C9.02856 24.0946 9.25414 23.7142 9.25414 23.3871C9.25414 23.0949 9.24389 22.3207 9.23876 21.2953C5.81601 22.0377 5.09414 19.6444 5.09414 19.6444C4.53427 18.2243 3.72524 17.8449 3.72524 17.8449C2.61064 17.082 3.81137 17.0973 3.81137 17.0973C5.04697 17.1835 5.69604 18.3647 5.69604 18.3647C6.79321 20.2463 8.57636 19.7029 9.27978 19.3881C9.39052 18.5924 9.70736 18.0499 10.0591 17.7423C7.32641 17.4347 4.45429 16.3765 4.45429 11.6618C4.45429 10.3185 4.9311 9.22133 5.72065 8.36C5.58222 8.04931 5.16694 6.79833 5.82831 5.10337C5.82831 5.10337 6.85883 4.77319 9.2121 6.36459C10.1965 6.09082 11.2424 5.95546 12.2883 5.94931C13.3342 5.95546 14.3801 6.09082 15.3644 6.36459C17.7023 4.77319 18.7328 5.10337 18.7328 5.10337C19.3942 6.79833 18.9789 8.04931 18.8559 8.36C19.6403 9.22133 20.1171 10.3185 20.1171 11.6618C20.1171 16.3888 17.2409 17.4296 14.5031 17.7321C14.9338 18.1012 15.3337 18.8559 15.3337 20.0084C15.3337 21.6552 15.3183 22.978 15.3183 23.3779C15.3183 23.7009 15.5336 24.0854 16.1642 23.9623C21.0871 22.3484 24.6094 17.7341 24.6094 12.3047C24.6094 5.50942 19.0999 0 12.3047 0Z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://twitter.com/angular"
-          aria-label="Twitter"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Twitter"
-          >
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw"
-          aria-label="Youtube"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="29"
-            height="20"
-            viewBox="0 0 29 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Youtube"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M27.4896 1.52422C27.9301 1.96749 28.2463 2.51866 28.4068 3.12258C29.0004 5.35161 29.0004 10 29.0004 10C29.0004 10 29.0004 14.6484 28.4068 16.8774C28.2463 17.4813 27.9301 18.0325 27.4896 18.4758C27.0492 18.9191 26.5 19.2389 25.8972 19.4032C23.6778 20 14.8068 20 14.8068 20C14.8068 20 5.93586 20 3.71651 19.4032C3.11363 19.2389 2.56449 18.9191 2.12405 18.4758C1.68361 18.0325 1.36732 17.4813 1.20683 16.8774C0.613281 14.6484 0.613281 10 0.613281 10C0.613281 10 0.613281 5.35161 1.20683 3.12258C1.36732 2.51866 1.68361 1.96749 2.12405 1.52422C2.56449 1.08095 3.11363 0.76113 3.71651 0.596774C5.93586 0 14.8068 0 14.8068 0C14.8068 0 23.6778 0 25.8972 0.596774C26.5 0.76113 27.0492 1.08095 27.4896 1.52422ZM19.3229 10L11.9036 5.77905V14.221L19.3229 10Z"
-            />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</main>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+        // Create floating particles
+        function createParticles() {
+            const particleContainer = document.querySelector('.particles');
+            
+            function addParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                
+                // Random colors
+                const colors = ['#4ecdc4', '#ff6b6b', '#ffd700', '#a855f7'];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                particleContainer.appendChild(particle);
+                
+                setTimeout(() => {
+                    particle.remove();
+                }, 20000);
+            }
+            
+            // Add initial particles
+            for (let i = 0; i < 10; i++) {
+                setTimeout(addParticle, i * 1000);
+            }
+            
+            // Add new particles periodically
+            setInterval(addParticle, 2000);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Mood buttons
+            moodButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const mood = this.getAttribute('data-mood');
+                    loadMoviesByMood(mood);
+                    
+                    // Update active button
+                    moodButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Search functionality
+            mainSearch.addEventListener('input', debounce(handleSearch, 300));
+            navSearch.addEventListener('input', debounce(handleSearch, 300));
+
+            // Theme toggle
+            themeToggle.addEventListener('click', toggleTheme);
+
+            // Modal close
+            modalClose.addEventListener('click', closeModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Escape key to close modal
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        }
+
+        // Load popular movies on initial load
+        function loadPopularMovies() {
+            const allMovies = [
+                ...movieDatabase['feel-good'],
+                ...movieDatabase['action'],
+                ...movieDatabase['thriller']
+            ].sort((a, b) => b.rating - a.rating);
+            
+            currentMovies = allMovies;
+            renderMovies(allMovies);
+            sectionTitle.textContent = 'Popular Movies';
+        }
+
+        // Load movies by mood
+        function loadMoviesByMood(mood) {
+            showLoading();
+            
+            setTimeout(() => {
+                const movies = movieDatabase[mood] || [];
+                currentMovies = movies;
+                renderMovies(movies);
+                
+                const moodTitles = {
+                    'feel-good': 'Feel Good Movies',
+                    'action': 'Action Movies',
+                    'thriller': 'Mind Bending Thrillers'
+                };
+                
+                sectionTitle.textContent = moodTitles[mood] || 'Movies';
+                currentMood = mood;
+            }, 500);
+        }
+
+        // Handle search
+        function handleSearch(e) {
+            const query = e.target.value.toLowerCase().trim();
+            
+            if (query === '') {
+                if (currentMood === 'popular') {
+                    loadPopularMovies();
+                } else {
+                    loadMoviesByMood(currentMood);
+                }
+                return;
+            }
+
+            const allMovies = [
+                ...movieDatabase['feel-good'],
+                ...movieDatabase['action'],
+                ...movieDatabase['thriller']
+            ];
+
+            const searchResults = allMovies.filter(movie => 
+                movie.title.toLowerCase().includes(query) ||
+                movie.cast.some(actor => actor.toLowerCase().includes(query)) ||
+                movie.genre.toLowerCase().includes(query)
+            );
+
+            renderMovies(searchResults);
+            sectionTitle.textContent = `Search Results for "${query}"`;
+            
+            // Sync search inputs
+            if (e.target.id === 'mainSearch') {
+                navSearch.value = query;
+            } else {
+                mainSearch.value = query;
+            }
+        }
+
+        // Render movies in grid
+        function renderMovies(movies) {
+            if (movies.length === 0) {
+                movieGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                        <i class="fas fa-film" style="font-size: 4rem; opacity: 0.3; margin-bottom: 1rem;"></i>
+                        <h3>No movies found</h3>
+                        <p style="opacity: 0.7;">Try adjusting your search or browse by mood</p>
+                    </div>
+                `;
+                return;
+            }
+
+            movieGrid.innerHTML = movies.map(movie => `
+                <div class="movie-card" onclick="openMovieModal(${movie.id})">
+                    <div class="movie-poster">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">${movie.title}</h3>
+                        <p class="movie-year">${movie.year}</p>
+                        <div class="movie-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-number">${movie.rating}</span>
+                        </div>
+                        <span class="movie-genre">${movie.genre}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Show loading animation
+        function showLoading() {
+            movieGrid.innerHTML = `
+                <div class="loading" style="grid-column: 1 / -1;">
+                    <div class="spinner"></div>
+                </div>
+            `;
+        }
+
+        // Open movie modal
+        function openMovieModal(movieId) {
+            const allMovies = [
+                ...movieDatabase['feel-good'],
+                ...movieDatabase['action'],
+                ...movieDatabase['thriller']
+            ];
+            
+            const movie = allMovies.find(m => m.id === movieId);
+            if (!movie) return;
+
+            // Populate modal content
+            document.getElementById('modalTitle').textContent = movie.title;
+            document.getElementById('modalYear').textContent = movie.year;
+            document.getElementById('modalRuntime').textContent = movie.runtime;
+            document.getElementById('modalGenre').textContent = movie.genre;
+            document.getElementById('modalRating').textContent = `⭐ ${movie.rating}`;
+            document.getElementById('modalSynopsis').textContent = movie.synopsis;
+
+            // Populate cast
+            const castGrid = document.getElementById('castGrid');
+            castGrid.innerHTML = movie.cast.map(actor => `
+                <div class="cast-member">
+                    <div class="cast-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="cast-name">${actor}</div>
+                </div>
+            `).join('');
+
+            // Populate similar movies
+            const currentGenre = movie.genre.toLowerCase();
+            const similarMovies = allMovies
+                .filter(m => m.id !== movieId && (
+                    m.genre.toLowerCase() === currentGenre || 
+                    Math.abs(m.rating - movie.rating) < 0.5
+                ))
+                .slice(0, 6);
+
+            const similarGrid = document.getElementById('similarGrid');
+            similarGrid.innerHTML = similarMovies.map(similar => `
+                <div class="similar-card" onclick="openMovieModal(${similar.id})">
+                    <div class="similar-poster">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h4>${similar.title}</h4>
+                    <p>${similar.year}</p>
+                </div>
+            `).join('');
+
+            // Show modal
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close movie modal
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Toggle theme
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            
+            const icon = themeToggle.querySelector('i');
+            icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+            
+            // Save theme preference
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        }
+
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                const icon = themeToggle.querySelector('i');
+                icon.className = 'fas fa-sun';
+            }
+        }
+
+        // Debounce function for search
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Load theme on page load
+        loadTheme();
+
+        // Smooth scrolling for mood buttons
+        moodButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                setTimeout(() => {
+                    document.querySelector('.results-section').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 100);
+            });
+        });
+
+        // Add some interactive effects
+        document.addEventListener('mousemove', function(e) {
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const rect = hero.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
+                
+                hero.style.background = `radial-gradient(ellipse at ${x * 100}% ${y * 100}%, rgba(76, 201, 240, 0.15) 0%, transparent 70%)`;
+            }
+        });
+
+        // Add scroll effects
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(26, 26, 26, 0.98)';
+            } else {
+                nav.style.background = 'rgba(26, 26, 26, 0.95)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe movie cards for animation
+        function observeMovieCards() {
+            const movieCards = document.querySelectorAll('.movie-card');
+            movieCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        }
+
+        // Call observe function after rendering movies
+        const originalRenderMovies = renderMovies;
+        renderMovies = function(movies) {
+            originalRenderMovies(movies);
+            setTimeout(observeMovieCards, 100);
+        };
+    </script>
+    <router-outlet />
 
 
-<router-outlet />
+
