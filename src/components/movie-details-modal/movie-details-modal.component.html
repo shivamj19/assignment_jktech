@@ -1,0 +1,53 @@
+<!-- Movie Detail Modal -->
+<div class="modal" id="movieModal">
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="modal-header">
+            <div class="modal-poster">
+                <i class="fas fa-film"></i>
+            </div>
+            <div class="modal-info">
+                <h2 class="modal-title" id="modalTitle">Movie Title</h2>
+                <div class="modal-meta">
+                    <span id="modalYear">2023</span>
+                    <span id="modalRuntime">120 min</span>
+                    <span id="modalGenre">Action</span>
+                    <span id="modalRating">⭐ 8.5</span>
+                </div>
+                <p class="modal-synopsis" id="modalSynopsis">
+                    An epic adventure that takes you on a journey through time and space...
+                </p>
+            </div>
+        </div>
+        
+        <div class="modal-body">
+            <div class="trailer-section">
+                <h3><i class="fas fa-play-circle" style="margin-right: 0.5rem; color: #4ecdc4;"></i>Trailer</h3>
+                <div class="trailer-placeholder">
+                    <div>
+                        <i class="fas fa-play" style="font-size: 3rem; margin-bottom: 1rem; animation: pulse 2s infinite;"></i>
+                        <br>
+                        Trailer Preview
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cast-section">
+                <h3><i class="fas fa-users" style="margin-right: 0.5rem; color: #4ecdc4;"></i>Cast</h3>
+                <div class="cast-grid" id="castGrid">
+                    <!-- Cast members will be loaded here -->
+                </div>
+            </div>
+            
+            <div class="similar-movies">
+                <h3><i class="fas fa-thumbs-up" style="margin-right: 0.5rem; color: #4ecdc4;"></i>You Might Also Like</h3>
+                <div class="similar-grid" id="similarGrid">
+                    <!-- Similar movies will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
