@@ -6,18 +6,19 @@
         
         <div class="modal-header">
             <div class="modal-poster">
-                <i class="fas fa-film"></i>
+                <img src="{{movieDetails.posterImage}}" alt=""/>
+                <!-- <i class="fas fa-film"></i> -->
             </div>
             <div class="modal-info">
-                <h2 class="modal-title" id="modalTitle">Movie Title</h2>
+                <h2 class="modal-title" id="modalTitle">{{movieDetails.title}}</h2>
                 <div class="modal-meta">
-                    <span id="modalYear">2023</span>
-                    <span id="modalRuntime">120 min</span>
+                    <span id="modalYear">{{movieDetails.year}}</span>
+                    <span id="modalRuntime">{{movieDetails.duration}}</span>
                     <span id="modalGenre">Action</span>
-                    <span id="modalRating">⭐ 8.5</span>
+                    <span id="modalRating">⭐ {{movieDetails.rating}}</span>
                 </div>
                 <p class="modal-synopsis" id="modalSynopsis">
-                    An epic adventure that takes you on a journey through time and space...
+                    {{movieDetails.description}}
                 </p>
             </div>
         </div>
@@ -26,25 +27,43 @@
             <div class="trailer-section">
                 <h3><i class="fas fa-play-circle" style="margin-right: 0.5rem; color: #4ecdc4;"></i>Trailer</h3>
                 <div class="trailer-placeholder">
-                    <div>
-                        <i class="fas fa-play" style="font-size: 3rem; margin-bottom: 1rem; animation: pulse 2s infinite;"></i>
-                        <br>
-                        Trailer Preview
-                    </div>
+                    <iframe 
+                        class="trailer-video"
+                        [src]="trailerLink"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <!-- <i class="fas fa-play" style="font-size: 3rem; margin-bottom: 1rem; animation: pulse 2s infinite;"></i>
+                    <br>
+                    Trailer Preview -->
                 </div>
             </div>
             
             <div class="cast-section">
                 <h3><i class="fas fa-users" style="margin-right: 0.5rem; color: #4ecdc4;"></i>Cast</h3>
                 <div class="cast-grid" id="castGrid">
-                    <!-- Cast members will be loaded here -->
+                    <div class="cast-member" *ngFor="let cast of movieDetails.cast">
+                        <div class="cast-photo">
+                            <img [src]="cast.personImage" alt=""/>
+                            <!-- <i class="fas fa-user"></i> -->
+                        </div>
+                        <div class="cast-name">{{cast.name}}</div>
+                    </div>
                 </div>
             </div>
             
             <div class="similar-movies">
                 <h3><i class="fas fa-thumbs-up" style="margin-right: 0.5rem; color: #4ecdc4;"></i>You Might Also Like</h3>
                 <div class="similar-grid" id="similarGrid">
-                    <!-- Similar movies will be loaded here -->
+                    <div class="similar-card" *ngFor="let movie of movieDetails.recomendations" (click)="openMovieModal(movie.uuid)">
+                        <div class="similar-poster">
+                            <img [src]="movie.posterImage" alt=""/>
+                            <!-- <i class="fas fa-film"></i> -->
+                        </div>
+                        <h4>{{movie.title}}</h4>
+                        <p>{{movie.year}}</p>
+                    </div>
                 </div>
             </div>
         </div>

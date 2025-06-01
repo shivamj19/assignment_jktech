@@ -1,5 +1,5 @@
 <div class="movie-grid" id="movieGrid">
-    <div class="movie-card" *ngFor="let movie of movieData" (click)="openModal(movie.id)">
+    <div class="movie-card" *ngFor="let movie of movieData" (click)="openModal(movie.uuid)">
         <div class="movie-poster">
             <img src="{{movie.posterImage}}" alt=""/>
             <!-- <i class="fas fa-film"></i> -->
@@ -14,4 +14,5 @@
             <span class="movie-genre">Sci-Fi</span>
         </div>
     </div>
+    <app-movie-details-modal></app-movie-details-modal>
 </div>

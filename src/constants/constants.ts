@@ -3,7 +3,7 @@ export const environment = {
     tmdbApiKey: '59f7b9bca39a9c7229703835cf614288',
     tmdbBaseUrl: 'https://api.themoviedb.org/3',
     imageBaseUrl: 'https://image.tmdb.org/t/p/w500',
-    youtubeBaseUrl: 'https://www.youtube.com/watch?v='
+    youtubeBaseUrl: 'https://www.youtube.com/embed/'
 };
 
 export const commonDetails = {
@@ -19,5 +19,9 @@ export const commonDetails = {
 }
 
 export const urlElement = {
-    popularMovies: '/movie/popular'
+    popularMovies: '/movie/popular',
+    movieBase: '/movie',
+    movieCast: '/credits',
+    movieRecom: '/recommendations',
+    movieTrailer: 'videos',
 }

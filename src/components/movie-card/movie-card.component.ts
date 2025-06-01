@@ -1,10 +1,11 @@
-import { ApplicationModule, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { PopularMoviesService } from '../../services/popular-movies/popular-movies.service';
-import { CommonModule, NgForOf } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { MovieDetailsModalComponent } from '../movie-details-modal/movie-details-modal.component';
 
 @Component({
   selector: 'app-movie-card',
-  imports: [CommonModule, ApplicationModule],
+  imports: [CommonModule, MovieDetailsModalComponent],
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.css'
 })
@@ -22,7 +23,7 @@ export class MovieCardComponent {
   }
 
   openModal(id: any){
-
+    console.log("modal opened:  ", id);
   }
 
 }
