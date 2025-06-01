@@ -16,6 +16,9 @@
             "outputPath": "dist/assignment",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "allowedCommonJsDependencies": [
+              "lodash", "moment"
+            ],
             "polyfills": [
               "zone.js"
             ],
