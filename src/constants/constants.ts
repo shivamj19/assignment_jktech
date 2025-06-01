@@ -30,3 +30,15 @@ export const urlElement = {
     discoverMovie: '/api/discover/movie',
     withgenre: 'with_genres'
 }
+export const prodUrlElement = {
+    popularMovies: '/movie/popular',
+    movieBase: '/movie',
+    personBase: '/person',
+    personMovies: '/movie_credits',
+    movieCast: '/credits',
+    movieRecom: '/recommendations',
+    movieTrailer: 'videos',
+    searchMulti: '/search/multi',
+    discoverMovie: '/discover/movie',
+    withgenre: 'with_genres'
+}
