@@ -1,8 +1,17 @@
 <section class="search-section">
     <div class="container">
         <div class="main-search">
-            <input type="text" placeholder="Search by movie title or actor..." id="mainSearch">
+            <input type="text" placeholder="Search by movie title or actor..." id="mainSearch" [(ngModel)]="searchVal">
             <i class="fas fa-search"></i>
+        </div>
+    </div>
+    <div *ngIf = "searchVal">
+        <div class="container">
+            <button class="modal-close" id="modalClose" (click)="closeMoods()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="section-title" id="sectionTitle">Search Results</h2>
+            <app-search-result [searchText]="searchVal"></app-search-result>
         </div>
     </div>
 </section>

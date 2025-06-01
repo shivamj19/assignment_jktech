@@ -146,7 +146,7 @@ export class MoviesSearchService {
                   genre: item.genre_ids
               })
             } else if(item.media_type === "person"){
-              this.searchResultMovieNameorPerson.movies.push({
+              this.searchResultMovieNameorPerson.person.push({
                 uuid: item.id,
                 name: item.original_name,
                 personImage: environment.imageBaseUrl + item.profile_path,
