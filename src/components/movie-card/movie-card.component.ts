@@ -13,6 +13,7 @@ export class MovieCardComponent {
 
   movieData: any = [];
   popularMovie: any = new PopularMoviesService();
+  uuid: any = "";
 
   constructor() { 
     this.fetchData();
@@ -23,7 +24,7 @@ export class MovieCardComponent {
   }
 
   openModal(id: any){
-    console.log("modal opened:  ", id);
+    this.uuid = id;
   }
 
 }

@@ -19,9 +19,14 @@ export const commonDetails = {
 }
 
 export const urlElement = {
-    popularMovies: '/movie/popular',
-    movieBase: '/movie',
+    popularMovies: '/api/movie/popular',
+    movieBase: '/api/movie',
+    personBase: '/api/person',
+    personMovies: '/movie_credits',
     movieCast: '/credits',
     movieRecom: '/recommendations',
     movieTrailer: 'videos',
+    searchMulti: '/api/search/multi',
+    discoverMovie: '/api/discover/movie',
+    withgenre: 'with_genres'
 }

@@ -13,7 +13,7 @@ export class PopularMoviesService {
   constructor() { }
 
   async fetchPopularMovies(body: any = {}): Promise<any> {
-    let url = '/api' + urlElement.popularMovies + '?api_key=' + environment.tmdbApiKey + '&page=1';
+    let url = urlElement.popularMovies + '?api_key=' + environment.tmdbApiKey + '&page=1';
     return axios.get(url, this.axiosConfig)
       .then((resp: any) => {
         if (resp && resp.data && !_.isEmpty(resp.data) && resp.data.results && !_.isEmpty(resp.data.results)) {
