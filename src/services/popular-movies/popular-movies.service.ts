@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import axios, { AxiosRequestConfig } from 'axios';
-import { commonDetails, environment, urlElement } from '../../constants/constants';
+import axios from 'axios';
+import { commonDetails, environment, prodUrlElement, urlElement } from '../../constants/constants';
 import * as _ from 'lodash';
 import moment from 'moment';
 
@@ -8,13 +8,12 @@ import moment from 'moment';
   providedIn: 'root'
 })
 export class PopularMoviesService {
-  axiosConfig: AxiosRequestConfig = commonDetails.axiosConfig;
   popularSet: any[] = [];
   constructor() { }
 
   async fetchPopularMovies(body: any = {}): Promise<any> {
-    let url = urlElement.popularMovies + '?api_key=' + environment.tmdbApiKey + '&page=1';
-    return axios.get(url, this.axiosConfig)
+    let url = environment.tmdbBaseUrl + prodUrlElement.popularMovies + '?api_key=' + environment.tmdbApiKey + '&page=1';
+    return axios.get(url, commonDetails.axiosConfig)
       .then((resp: any) => {
         if (resp && resp.data && !_.isEmpty(resp.data) && resp.data.results && !_.isEmpty(resp.data.results)) {
           this.popularSet = [];
